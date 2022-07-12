@@ -1,0 +1,35 @@
+<html lang="en" xmlns:th="https://thymeleaf.org">
+<head>
+    <title>Index Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+<div class="card" style="width:50%;margin:5%">
+    <form action="saveUser" method="post" th:object="${user}">
+        <div class="form-group">
+            <label for="first-name">First Name</label>
+            <input type="text" class="form-control" th:field="*{userFirstName}" id="fname" aria-describedby="emailHelp" placeholder="Enter First Name">
+        </div>
+        <div class="form-group">
+            <label for="last-name">Last Name</label>
+            <input type="text" class="form-control" th:field="*{userLastName}" id="lname" placeholder="Enter Last Name">
+        </div>
+
+        <div class="form-group">
+            <label for="email-Id">Email Id</label>
+            <input type="email" class="form-control" th:field="*{userEmail}" id="userEmail" placeholder="Enter Email Id">
+        </div>
+        <button type="button" class="btn btn-primary"><a th:href="@{/}" style="color:white">Go Home</a></button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+</div>
+</body>
+</html>
